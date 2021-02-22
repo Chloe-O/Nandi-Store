@@ -1,3 +1,20 @@
+/*BASE*/
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*Header*/
+
+.page-header {
+  background-image: url("/media/bedroom-header.jpg"); 
+  height: 60vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 /*Footer*/
 
 footer {
