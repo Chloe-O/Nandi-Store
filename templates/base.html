@@ -44,7 +44,6 @@
 
     <header>
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <i class="fas fa-cat"></i> NANDI STORE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -57,28 +56,40 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Profile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Manage Products</a></li>
+                                {% endif %}
+                                <li><a class="dropdown-item" href="#">Your Account</a></li>
+                                <li><a class="dropdown-item" href="#">Shopping Cart | {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        £0.00
+                                        {% endif %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                                {% else %}
+                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+                                {% endif %}
+
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Log In</a>
+                        </li>
                     </ul>
-                    <form class="d-flex">
+                    <form class="d-flex" method="GET" action="">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light" type="submit">Search</button>
                     </form>
+
+
                 </div>
             </div>
         </nav>
