@@ -233,3 +233,9 @@ In order to deploy the site, Github, MongoDB and Heroku were used.
 # Credit
 
 - [Django Allauth Docs](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+
+
+# Image Credit
+
+- [Header Image](https://www.pexels.com/@cottonbro) Cottonbro @ Pexels
