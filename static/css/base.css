@@ -1,38 +1,29 @@
-/*BASE*/
-
-body {
-  font-family: 'Lato', sans-serif;
-}
-
-
 /*Header*/
 
-.page-header {
-  background-image: url("/media/bedroom-header.jpg"); 
-  height: 60vh;
+body {
+  background: url('static/media/bedroomheader.jpg') no-repeat center center fixed;
+  height: 50vh;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  font-family: 'Lato', sans-serif;
 }
 
 /*Footer*/
 
 footer {
   padding-top: 100px;
-  padding-bottom: 20px;
-  color: hsla(210, 10%, 23%, 0.6);
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
 .footer-links a i {
-  color: hsla(210, 10%, 23%, 0.6);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   background-color: transparent;
-  font-size: 20px;
-  padding: 0 10px;
+  font-size: 30px;
+  padding: 15px 10px;
   text-align: center;
 }
 
 .footer-links a i:hover {
-    color: hsla(210, 10%, 23%, 0.712);
+    color: hsla(0, 0%, 34%, 0.712);
 }
