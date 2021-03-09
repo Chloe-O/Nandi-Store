@@ -26,17 +26,20 @@
                     Sort by
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Price</a></li>
-                    <li><a class="dropdown-item" href="#">Rating</a></li>
-                    <li><a class="dropdown-item" href="#">Category</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Rating</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Category</a></li>
                 </ul>
             </div>
-           <div class="pb-1">
-            <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=activewear" role="button">Activewear</a>
+            <div class="pb-1">
+                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=activewear"
+                    role="button">Activewear</a>
 
-            <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=bed_bath" role="button">Bed & Bath</a>
+                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=bed_bath" role="button">Bed &
+                    Bath</a>
 
-            <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=clearance" role="button">Clearance</a>
+                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=clearance"
+                    role="button">Clearance</a>
             </div>
         </div>
     </div>
