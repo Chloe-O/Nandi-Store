@@ -36,7 +36,15 @@
             <p class="card-text">No ratings yet</p>
             {% endif %}
             <p>{{ product.description }}</p>
+                        {% if product.category %}
+            <a class="text-muted fw-light" href="{% url 'products' %}?category={{ product.category.name }}">
+                <i class="fas fa-tag"></i>{{ product.category.friendly_name }}
+            </a>
+            {% endif %}
         </div>
+
+
+
     </div>
 </div>
 {% endblock %}

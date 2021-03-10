@@ -68,6 +68,11 @@
                             {% else %}
                             <p class="card-text">No ratings yet</p>
                             {% endif %}
+                            {% if product.category %}
+                            <a class="text-muted fw-light text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag"></i>{{ product.category.friendly_name }}
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
