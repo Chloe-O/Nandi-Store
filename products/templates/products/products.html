@@ -48,7 +48,7 @@
             <div class="row"></div>
             <div class="row">
                 {% for product in products %}
-                <div class="col-sm-60 col=-md-6 col-lg-4 col-xl-3">
+                <div class="col-sm-60 col=-md-6 col-lg-4 col-xl-3 pt-3">
                     <div class="card h-100">
                         {% if product.image %}
                         <a href="{% url 'product_info' product.id %}">
@@ -69,7 +69,8 @@
                             <p class="card-text">No ratings yet</p>
                             {% endif %}
                             {% if product.category %}
-                            <a class="small-tag text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
+                            <a class="small-tag text-decoration-none"
+                                href="{% url 'products' %}?category={{ product.category.name }}">
                                 <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
                             </a>
                             {% endif %}

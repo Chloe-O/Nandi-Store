@@ -198,3 +198,4 @@ In order to deploy the site, Github, MongoDB and Heroku were used.
 # Image Credit
 
 - [Header Image](https://www.pexels.com/@cottonbro) Cottonbro @ Pexels
+- [Noimage Image](https://github.com/ckz8780/boutique_ado_v1/blob/dependabot/pip/django-3.0.7/media/noimage.png) Code Institute boutique_ado_v1 project
