@@ -8,7 +8,7 @@
 /*Header*/
 
 body {
-  background: url('static/media/bedroomheader.jpg') no-repeat center center fixed;
+  background: url('media/bedroomheader.jpg') no-repeat center center fixed;
   height: 50vh;
   background-size: cover;
   font-family: 'Lato', sans-serif;
