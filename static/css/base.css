@@ -1,3 +1,8 @@
+body, html {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
 /*Products Listing*/
 
 .card-size {
@@ -7,11 +12,22 @@
 
 /*Header*/
 
-body {
-  background: url('/media/bedroomheader.jpg') no-repeat center center fixed;
-  height: 50vh;
+.header-image {
+background: url('/media/headerimage.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Lato', sans-serif;
+  position: relative;
+
+}
+
+.header-text {
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  position: absolute;
+transform: translate(-50%, -50%);
 }
 
 /*Category tags*/
@@ -22,7 +38,6 @@ body {
 /*Footer*/
 
 footer {
-  padding-top: 100px;
   color: rgb(0, 0, 0);
   text-align: center;
 }
