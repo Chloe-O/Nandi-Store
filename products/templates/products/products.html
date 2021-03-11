@@ -18,7 +18,9 @@
             <h2>Products</h2>
         </div>
         <div>
-            <a class="link-secondary" href="{% url 'products' %}">back to all products</a> | <span class="fw-bold">{{products|length}}</span> product(s){% if search_term %} results for <span class="fw-bold">{{search_term}}"</span> {% endif %}
+            <a class="link-secondary" href="{% url 'products' %}">back to all products</a> | <span
+                class="fw-bold">{{products|length}}</span> product(s){% if search_term %} results for <span
+                class="fw-bold">{{search_term}}"</span> {% endif %}
         </div>
     </div>
     <div class="row">
@@ -34,15 +36,15 @@
                     <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Category</a></li>
                 </ul>
             </div>
+            
+
+{% for c in current_categories %}
             <div class="pb-1">
-                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=activewear"
-                    role="button">Activewear</a>
+                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category={{ c.name }}"
+                    role="button">{{ c.friendly_name }</a>
+    {% endfor %}
 
-                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=bed_bath" role="button">Bed &
-                    Bath</a>
 
-                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category=clearance"
-                    role="button">Clearance</a>
             </div>
         </div>
     </div>
@@ -72,7 +74,7 @@
                             <p class="card-text">No ratings yet</p>
                             {% endif %}
                             {% if product.category %}
-                            <a class="small-tag text-decoration-none"
+                            <a class="small-tag link-secondary text-decoration-none"
                                 href="{% url 'products' %}?category={{ product.category.name }}">
                                 <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
                             </a>

@@ -4,13 +4,13 @@
         "model": "products.product",
         "fields": {
             "sku": "pp5001340155",
-            "name": "test product",
-            "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
-            "price": 53.99,
+            "name": "Aloe Vera",
+            "description": "Aloe vera is a succulent plant species of the genus Aloe. An evergreen perennial, it originates from the Arabian Peninsula, but grows wild in tropical, semi-tropical, and arid climates around the world. It is cultivated for agricultural and medicinal uses.",
+            "price": 20.00,
             "category": 1,
-            "rating": 1.0,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-            "image": "DP0709201205510679M.jpg"
+            "rating": 5.0,
+            "image_url": "https://images.pexels.com/photos/1840270/pexels-photo-1840270.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "image": "media/aloe-vera.jpg"
         }},
         {
             "pk": 2,

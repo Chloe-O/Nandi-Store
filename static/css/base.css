@@ -35,6 +35,11 @@ transform: translate(-50%, -50%);
     background-color: #212529;
 }
 
+.yellow-trim {
+    display: none;
+    size: 2px;
+}
+
 /*Category tags*/
 .small-tag {
     font-size: 10px;
