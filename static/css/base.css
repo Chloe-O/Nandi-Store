@@ -13,7 +13,7 @@ body, html {
 /*Header*/
 
 .header-image {
-background: url('/media/headerimage.jpg');
+background: url('/media/bedroomheader.jpg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,11 +23,16 @@ background: url('/media/headerimage.jpg');
 }
 
 .header-text {
-  top: 50%;
+  top: 40%;
   left: 50%;
   text-align: center;
   position: absolute;
 transform: translate(-50%, -50%);
+}
+
+.nandi-welcome {
+    color: white;
+    background-color: black;
 }
 
 /*Category tags*/
