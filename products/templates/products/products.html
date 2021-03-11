@@ -17,6 +17,9 @@
         <div class="col text-center py-2">
             <h2>Products</h2>
         </div>
+        <div>
+            <a class="link-secondary" href="{% url 'products' %}">back to all products</a> | <span class="fw-bold">{{products|length}}</span> product(s){% if search_term %} results for <span class="fw-bold">{{search_term}}"</span> {% endif %}
+        </div>
     </div>
     <div class="row">
         <div class="col text-center">
