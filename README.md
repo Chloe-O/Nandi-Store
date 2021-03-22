@@ -193,6 +193,8 @@ In order to deploy the site, Github, MongoDB and Heroku were used.
 
 - [Django Allauth Docs](https://django-allauth.readthedocs.io/en/latest/installation.html)
 - [W3Schools](https://www.w3schools.com/howto/howto_css_hero_image.asp) Hero image
+- [The Little Botanical](https://thelittlebotanical.com) information about different houseplants
+
 
 
 
