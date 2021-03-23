@@ -23,9 +23,9 @@
                 class="fw-bold">{{search_term}}"</span> {% endif %}
         </div>
     </div>
-    <div class="row">
-        <div class="col text-center">
-            <div class="dropdown pb-1">
+    <div class="row py-2">
+        <div class="col">
+            <div class="dropdown">
                 <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Sort by
@@ -35,18 +35,33 @@
                     <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Rating</a></li>
                     <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Category</a></li>
                 </ul>
+
+
             </div>
-            
 
-{% for c in current_categories %}
-            <div class="pb-1">
+
+            {% for c in current_categories %}
+            <div>
                 <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category={{ c.name }}"
-                    role="button">{{ c.friendly_name }</a>
-    {% endfor %}
-
-
+                    role="button">{{ c.friendly_name }}</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <div class="dropdown">
+                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Choose a category
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="{% url 'products' %}?category=cacti">Cactus</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' %}?category=succulents">Succulents</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' %}?category=greenleafy">Leafy Houseplants</a></li>
+                </ul>
             </div>
         </div>
+
+
     </div>
     <div class="row">
         <div class="col-10 product-container offset-1">
