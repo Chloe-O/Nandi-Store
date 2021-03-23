@@ -18,7 +18,7 @@
             <h2>Products</h2>
         </div>
         <div>
-            <a class="link-secondary" href="{% url 'products' %}">back to all products</a> | <span
+            <a class="link-secondary" href="{% url 'products' %}"> show all products</a> | <span
                 class="fw-bold">{{products|length}}</span> product(s){% if search_term %} results for <span
                 class="fw-bold">{{search_term}}"</span> {% endif %}
         </div>
@@ -39,13 +39,6 @@
 
             </div>
 
-
-            {% for c in current_categories %}
-            <div>
-                <a class="btn btn-dark btn-sm" href="{% url 'products' %}?category={{ c.name }}"
-                    role="button">{{ c.friendly_name }}</a>
-            </div>
-            {% endfor %}
         </div>
         <div class="col">
             <div class="dropdown">
@@ -56,13 +49,23 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item" href="{% url 'products' %}?category=cacti">Cactus</a></li>
                     <li><a class="dropdown-item" href="{% url 'products' %}?category=succulents">Succulents</a></li>
-                    <li><a class="dropdown-item" href="{% url 'products' %}?category=greenleafy">Leafy Houseplants</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' %}?category=greenleafy">Leafy Houseplants</a>
+                    </li>
                 </ul>
             </div>
         </div>
 
 
     </div>
+
+    {% for c in current_categories %}
+    <div class="pt-2">
+        <a class="text-decoration-none cat-badge" href="{% url 'products' %}?category={{ c.name }}" role="button"><span
+                class="badge bg-dark">{{ c.friendly_name }}</span></a>
+
+    </div>
+    {% endfor %}
+
     <div class="row">
         <div class="col-10 product-container offset-1">
             <div class="row"></div>
