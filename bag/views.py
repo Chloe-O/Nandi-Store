@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, reverse
-from products.models import Product
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
+from products.models import Product
 
 
 # Renders shopping bag #
@@ -28,10 +29,11 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
-# Add or remove specified quantity of product to bag #
+# Add or remove specified quantity of product to/from bag #
 
 
 def adjust_bag(request, item_id):
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
@@ -40,7 +42,21 @@ def adjust_bag(request, item_id):
         messages.success(request, "Successfully added to your bag")
     else:
         bag.pop(item_id)
-        messages.success(request, "Successfully removed from you bag")
+        messages.success(request, "Item removed from you bag")
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
+
+
+# Add or remove specified quantity of product to bag #
+
+
+def remove_from_bag(request, item_id):
+    product = get_object_or_404(Product, pk=item_id)
+    bag = request.session.get('bag', {})
+
+    bag.pop(item_id)
+    messages.success(request, "Item removed from your bag")
+
+    request.session['bag'] = bag
+    return HttpResponse(status=200)
