@@ -43,7 +43,9 @@
                     </div>
                     <div class="col-12 col-sm-6 order-sm-last">
                         <p class="my-0">Price Each: ${{ item.product.price }}</p>
-                        <p> <span class="fw-bold">Subtotal:</span>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        <p> <span
+                                class="fw-bold">Subtotal:</span>£{{ item.product.price | calc_subtotal:item.quantity }}
+                        </p>
                     </div>
                     <div class="col-12 col-sm-6">
                         {% include "bag/quantity-form.html" %}
@@ -109,3 +111,28 @@
     </div>
 </div>
 {% endblock %}
+{% include 'products/includes/quantity_input_script.html' %}
+
+<!--JS from Boutique Ado tutorial used here-->
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
