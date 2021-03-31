@@ -41,9 +41,6 @@
                     <div class="col-12 col-sm-6 mb-2">
                         {% include "bag/product-image.html" %}
                     </div>
-                    <div class="col-12 col-sm-6 mb-2">
-                        {% include "bag/product-info.html" %}
-                    </div>
                     <div class="col-12 col-sm-6 order-sm-last">
                         <p class="my-0">Price Each: ${{ item.product.price }}</p>
                         <p> <span class="fw-bold">Subtotal:</span>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -79,9 +76,6 @@
                     <tr>
                         <td class="p-3 w-25">
                             {% include "bag/product-image.html" %}
-                        </td>
-                        <td class="py-3">
-                            {% include "bag/product-info.html" %}
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price }}</p>
