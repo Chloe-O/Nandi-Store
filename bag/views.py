@@ -33,16 +33,15 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
-    if quantity in range(0, 10):
+    if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, "Successfully added to your bag")
+
     else:
-        bag.pop(item_id)
-        messages.success(request, "Item removed from you bag")
+        messages.error(
+            request, "You cannot proceed with less than one item, please remove the item from your bag if not needed")
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -52,11 +51,15 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    product = get_object_or_404(Product, pk=item_id)
-    bag = request.session.get('bag', {})
+    try:
+        bag = request.session.get('bag', {})
 
-    bag.pop(item_id)
-    messages.success(request, "Item removed from your bag")
+        bag.pop(item_id)
+        messages.success(request, "Item removed from your bag")
 
-    request.session['bag'] = bag
-    return HttpResponse(status=200)
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
