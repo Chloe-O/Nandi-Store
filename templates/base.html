@@ -98,13 +98,27 @@
         </nav>
 
         <div class="row bg-warning text-center">
-            <div class="fw-bold"><i class="fas fa-seedling"></i> FREE DELIVERY ON ORDERS OVER £{{ FREE_DELIVERY_THRESHOLD }}! <i
-                    class="fab fa-pagelines"></i></div>
+            <div class="fw-bold"><i class="fas fa-seedling"></i> FREE DELIVERY ON ORDERS OVER
+                £{{ FREE_DELIVERY_THRESHOLD }}! <i class="fab fa-pagelines"></i></div>
         </div>
     </header>
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -114,6 +128,9 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script>
+        $(".toast").toast("show");
+    </script>
     {% endblock %}
 
 
