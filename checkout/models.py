@@ -1,5 +1,5 @@
 """
-Taken from Code Institute Boutique Ado tutorial - Checkout App
+ from Code Institute Boutique Ado tutorial - Checkout App
 """
 
 import uuid
