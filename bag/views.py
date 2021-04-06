@@ -40,6 +40,9 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
+        messages.success(request,
+                         (f'Updated {product.name} '
+                          f'quantity to {bag[item_id]}'))
 
     else:
         messages.error(
