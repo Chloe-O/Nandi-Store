@@ -114,8 +114,8 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        'stripe_public_key': 'pk_test_51IdGcjKowghQ2KRo4zaOTJ0AtBnO2MkReiZ1EOnEIxBhb5LmBUF3bDUrq5soZaPLUN258xdBcGSYsvuF6F4ELzdJ00WbK2fult',
+        'client_secret': 'test client secret',
     }
     return render(request, template, context)
 # Checkout success view
