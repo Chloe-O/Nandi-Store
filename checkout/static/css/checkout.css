@@ -46,6 +46,8 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
+/*Loading spinner overlay*/
+
 #loading-overlay {
 	display: none;
 	position: fixed;
