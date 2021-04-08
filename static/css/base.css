@@ -36,6 +36,14 @@ transform: translate(-50%, -50%);
     size: 2px;
 }
 
+/*Bag*/
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
 /*Category tags*/
 .small-tag {
     font-size: 10px;
