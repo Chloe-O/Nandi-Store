@@ -165,7 +165,7 @@ I have completed testing alongside visitor goals
 ---
 
 # Bugs/Known Issues
-
+max items on product info but not on bag - resolved?
 
 
 
