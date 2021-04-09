@@ -26,7 +26,7 @@
     <div class="row py-2">
         <div class="col">
             <div class="dropdown">
-                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                <button class="btn btn-dark btn-sm rounded-0 dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Sort by
                 </button>
@@ -42,7 +42,7 @@
         </div>
         <div class="col">
             <div class="dropdown">
-                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2"
+                <button class="btn btn-dark rounded-0 btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Choose a category
                 </button>
@@ -72,7 +72,7 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-60 col-md-6 col-lg-4 col-xl-3 pt-3">
-                    <div class="card h-100">
+                    <div class="card h-95 rounded-0">
                         {% if product.image %}
                         <a href="{% url 'product_info' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
