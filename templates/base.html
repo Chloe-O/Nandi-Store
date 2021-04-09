@@ -69,9 +69,9 @@
                                 £{{ grand_total|floatformat:2 }}
                                 {% else %}
                                 £0.00
-                                {% endif %}</a>
+                                </a>
                         </li>
-                        
+                        {% endif %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Log In</a></li>

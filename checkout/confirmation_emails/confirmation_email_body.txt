@@ -1,0 +1,7 @@
+Hi there {{ order.full_name }},
+
+This email is to confirm that your order {{ order.order_number }} was successful.
+
+You can expect to recieve this in the next 4-5 working days.
+
+Thanks for using NANDI Store!

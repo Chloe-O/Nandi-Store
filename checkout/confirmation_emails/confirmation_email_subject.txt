@@ -1,0 +1,1 @@
+NANDI Store | Confirmation of your order {{ order.order_number }}

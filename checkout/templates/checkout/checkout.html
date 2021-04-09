@@ -57,9 +57,10 @@
             </div>
             </div>
             {% endfor %}
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mt-4">
                 <p>Please complete the form below to complete your order</p>
-                <form><input action="{% url 'checkout' %}" method="POST" id="payment-form">
+                <form>
+                    <input action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="px-3 mb-5">
                         <legend class="fieldset-label px-2 w-auto">Details</legend>
@@ -67,7 +68,7 @@
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
                     <fieldset class="px-3 mb-5">
-                        <legend class="fieldset-label px-2 w-auto">Delivery</legend>
+                        <legend class="fieldset-label px-2">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
