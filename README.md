@@ -1,6 +1,6 @@
 # Nandi Store
 
-For this project, I have used HTML, CSS, Python(using Flask framework). The small amount of JavaScript has been handled by Bootstrap using a Jquery CDN. 
+For this project, I have used HTML, CSS, Python(using Flask framework). The small amount of JavaScript has been handled by Bootstrap using a Jquery CDN.
 
 [Link to my deployed site on Heroku]()
 
@@ -10,21 +10,17 @@ For this project, I have used HTML, CSS, Python(using Flask framework). The smal
 
 # User Experience (UX)
 
-The purpose of my site is 
+The purpose of my site is
 
 ## User Stories
 
 ## First Time Visitor Goals
 
-
-
 ## Returning Time Visitor Goals & Frequent Time Visitor Goals
-
-
 
 ## Design
 
- - Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages
+- Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages
 
 ## Colour Scheme
 
@@ -58,7 +54,7 @@ Languages used for this site:
 ## Frameworks, Libraries & Programs Used
 
 1. [Google Fonts:](https://fonts.google.com/)
-   - Google fonts were used to import the Roboto font 
+   - Google fonts were used to import the Roboto font
 2. [Font Awesome:](https://fontawesome.com/)
    - Font Awesome was used for icons that appear on the site
 3. [GitHub:](https://github.com/)
@@ -72,11 +68,11 @@ Languages used for this site:
 
 # Features
 
-- A user can 
+- A user can
 
 # Data Structure
 
-- 
+-
 
 ---
 
@@ -102,13 +98,11 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### JavaScript
 
-![Python]()
----
+## ![Python]()
 
 ### JavaScript
 
 ![CSS]()
-
 
 ## Testing User Stories from User Experience (UX) Section and Testing
 
@@ -118,18 +112,18 @@ I have completed testing alongside visitor goals
 
 - I want to understand the purpose of the site within a short time of visiting the site by the images and description on the landing page
   - The site is quite minimal and clearly laid out, it is easy for a user to user the purpose of and navigate through the site
-   1. When navigating through the site, using the navigation bar or collapsable menu(on smaller display), there are no broken links or misdirects
+  1.  When navigating through the site, using the navigation bar or collapsable menu(on smaller display), there are no broken links or misdirects
 - I want to easily create an account to make full use of the site
   - A user can click on the 'login/register' page in the navigation bar to log in or register to the site
-   1. A user can log in or register an account using a minimum length of 5 characters for their username and password
+  1.  A user can log in or register an account using a minimum length of 5 characters for their username and password
 - I want to add, edit and delete my own recipes
   - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
-   1. Once a user is logged in or creates an account, they will automatically be redirected to their own profile page
-   2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to select edit or delete
+  1.  Once a user is logged in or creates an account, they will automatically be redirected to their own profile page
+  2.  If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to select edit or delete
 - I want to view recipes submitted by other users
   - Users can navigate to the recipes page to view all submitted recipes including their own
-   1. The all recipes page displays all submitted recipes in a Bootstrap accordian
-   2. Users not logged in can manually access the recipes page, can view recipes but cannot make any changes
+  1.  The all recipes page displays all submitted recipes in a Bootstrap accordian
+  2.  Users not logged in can manually access the recipes page, can view recipes but cannot make any changes
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
     1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
@@ -154,7 +148,6 @@ I have completed testing alongside visitor goals
   - I want to log out when I am finished using the site and clear session data
     1. When logged in, the navigation bar shows a log out option(only viewable by logged in users), clicking this logs the user out and redirects them to the log in page
 
-
 ## Further Testing
 
 - I have used Chrome Developer Tools to understand how the live Heroku app looks on different devices, I've also tested the app on my own Samsung S20+ device
@@ -165,13 +158,12 @@ I have completed testing alongside visitor goals
 ---
 
 # Bugs/Known Issues
+
 max items on product info but not on bag - resolved?
-
-
 
 # Resolved Issues
 
- - I encountered a bug early on where clicking the link to the index page did not work and threw a 'xxxxx' error, I discovered this was because I was using 'index' instead 'home' in my href url
+- I encountered a bug early on where clicking the link to the index page did not work and threw a 'xxxxx' error, I discovered this was because I was using 'index' instead 'home' in my href url
 
 ---
 
@@ -179,13 +171,14 @@ max items on product info but not on bag - resolved?
 
 In order to deploy the site, Github, MongoDB and Heroku were used.
 
-## Github & Gitpod 
+## Github & Gitpod
+
 1. I created a repository for the project on GitHub, using Gitpod I was able to use the green 'Gitpod' button to open the project in a Gitpod workspace and work on the project from here - commits and pushes were actioned using the source control tab in Gitpod
 2. To clone the repository, a user can clone the repo use the 'code' button in the repo. From here the repo can be cloned using HTTPS or GitHub CLI. Alternatively, a user can clone the repo locally by selecting the 'Open with GitHub Desktop' option, this will produce a prompt for GitHub Desktop to open - more information about cloning a repository can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 3. When running locally, all the relevant dependencies will need to be installed using pip, in the IDE's terminal type:
-> pip3 install -r requirements.txt
+   > pip3 install -r requirements.txt
 4. Create a Procfile, this will allow Heroku to understand the type of app we are running, the following should be input to the Procfile:
-> web: python run.py
+   > web: python run.py
 
 ---
 
@@ -196,15 +189,12 @@ In order to deploy the site, Github, MongoDB and Heroku were used.
 - Boutique Ado tutorial
 - [The Little Botanical](https://thelittlebotanical.com) information about different houseplants
 
-
-
-
 # Image Credit
 
 - [Header Image](https://www.pexels.com/@cottonbro) Cottonbro @ Pexels
 - [Aloe Vera Image](https://www.pexels.com/@cisiq) Cintia Siqueira @ Pexels
 - [Crassula Image](https://www.pexels.com/@harry-cooke) Harry Cooke @ Pexels
+- [Heart Cactus Image](https://pixabay.com/users/chloelindaphotographe-9286470/) Chloe Linda @ Pixabay
 - [Aloe Vera Info](https://en.wikipedia.org/wiki/Aloe_vera) Wikipedia
-
 
 - [Noimage Image](https://github.com/ckz8780/boutique_ado_v1/blob/dependabot/pip/django-3.0.7/media/noimage.png) Code Institute boutique_ado_v1 project
