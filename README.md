@@ -48,13 +48,14 @@ Languages used for this site:
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Python](https://www.python.org/)
 - [Bootstrap](https://getbootstrap.com/)
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-- [Jinja](https://jinja.palletsprojects.com/)
+- [Django](https://www.djangoproject.com/)
+
+
 
 ## Frameworks, Libraries & Programs Used
 
 1. [Google Fonts:](https://fonts.google.com/)
-   - Google fonts were used to import the Roboto font
+   - Google fonts were used to import font
 2. [Font Awesome:](https://fontawesome.com/)
    - Font Awesome was used for icons that appear on the site
 3. [GitHub:](https://github.com/)
@@ -63,6 +64,8 @@ Languages used for this site:
    - Balsamiq was used to create the wireframes for the site
 5. [Heroku:](https://www.heroku.com/)
    - Heroku was used to deploy the site
+6. [AWS](https://aws.amazon.com/)
+   - AWS used for......
 
 ---
 
@@ -169,7 +172,7 @@ max items on product info but not on bag - resolved?
 
 # Deployment
 
-In order to deploy the site, Github, MongoDB and Heroku were used.
+In order to deploy the site, Github, AWS and Heroku were used.
 
 ## Github & Gitpod
 
@@ -178,8 +181,52 @@ In order to deploy the site, Github, MongoDB and Heroku were used.
 3. When running locally, all the relevant dependencies will need to be installed using pip, in the IDE's terminal type:
    > pip3 install -r requirements.txt
 4. Create a Procfile, this will allow Heroku to understand the type of app we are running, the following should be input to the Procfile:
-   > web: python run.py
+   > web: gunicorn nandi_store.wsgi:application
 
+
+## Heroku
+
+1. Create a Heroku account or log in if you already have an account
+2. Create a new app in Heroku and select your region or closet region, for me this was Europe, I am based in the UK
+3. Navigate to 'Resources' and provision a Heroku Postgres database, using the free plan here is fine
+4. In GitPod install dj_database_url and psycopg2-binary using the pip3 install command in the terminal
+5. Install requirements using
+  > pip3 freeze > requirements.txt
+6. Import dj_database_url in project level settings.py
+7. Comment out the current DATABASE settings(these will be required later) 
+8. Obtain DATABASE_URL from Heroku Key Vars, type the following into DATABASE settings 
+  > 'default': dj_database_url.parse(*DATABASE URL GOES HERE*)
+9. Run migrations by using
+  > python3 manage.py migrate
+10. If you do not already have a superuser account, you can create one using the following command and following prompts in the terminal
+  > python3 manage.py createsuperuser
+11. In settings.py uncomment the previously commented out DATABASE settings and update this using an if statement - the app will run on Heroku but can 'fall back' on SQL if needed
+12. Install gunicorn using:
+  > pip3 install gunicorn
+13. Again, freeze requirements using:
+  > pip3 freeze > requirements.txt
+14. Create Procfile and input the following to allow Heroku to understand how to run the project:
+  > web: gunicorn nandi_store.wsgi:application
+15. Login to Heroki using the terminal by typing and following terminal prompts
+  > heroku login -i
+16. We do not want Heroku to collect static files so must disable this for now using(--app nandi-store is only requirement if you have one than one app):
+  > heroku config:set DISABLE_COLLECTSTATIC=1 --app nandi-store
+17. Back in settings.py we need to change ALLOWED_HOSTS to, to allow Heroku app to run but also to allow us to still access it via GitPod:
+  > ALLOWED_HOSTS = ['nandi-store.herokuapp.com', 'localhost']
+18. Copy Environment Variables from GitPod into Heroku's Config Vars which can be found in settings
+
+### Deploying in Heroku
+
+1. Using GitPod Heroku needs to be initialised, in the terminal input:
+  > git remote: heroku git:remote -a nandi-store
+2. Push to Heroku Master using:
+  > git push heroku master
+3. In the Heroku Overview you will be able to see Heroku building the app - the site is now live
+4. Once Heroku has finished the build, we can link our Git repo to Heroku for automatic deployment which means any changes to the repo will automatically be pushed to the Heroku branch and live site will reflect and changes - In the Deploy tab, click 'GitPod' in Deployment methods and search for the relevant repo and connect
+5. Finally, tick the option to allow automatic deploys
+6. The app can be launced using the'Open App' button towards the top of the screen
+
+## AWS
 ---
 
 # Credit
