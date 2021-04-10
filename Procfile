@@ -1,0 +1,1 @@
+web: gunicorn nandi_store.wsgi:application
