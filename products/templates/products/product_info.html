@@ -40,7 +40,7 @@
                 <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
             </a>
             {% endif %}
-            <p>{{ product.price }}</p>
+            <p>£{{ product.price }}</p>
             {% if product.rating != 0 %}
             <p class="card-text"><i class="fas fa-star"></i> {{product.rating}}/5</p>
             {% else %}
