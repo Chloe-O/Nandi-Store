@@ -25,6 +25,9 @@
     </div>
     <!--Order form-->
     <!--Order summary-->
+
+
+
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -39,7 +42,7 @@
             <!--loops through items in bag-->
             {% for item in bag_items %}
             <div class="row">
-            <div class="col-2 mb-1">
+                <div class="col-12 col-lg-6">
                 <a href="{% url 'product_info' item.product.id %}">
                     {% if item.product.image %}
                     <img class="w-100" src="{{ item.product_image.url }}" alt="{{ product.name }}">
@@ -55,19 +58,24 @@
             <div class="col-3 text-right">
                 <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
             </div>
-            </div>
             {% endfor %}
-            <div class="col-12 col-lg-6 mt-4">
+
+            <div class="col-12 col-lg-6">
                 <p>Please complete the form below to complete your order</p>
                 <form>
                     <input action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
+
+                
+
+
+                    
                     <fieldset class="px-3 mb-5">
                         <legend class="fieldset-label px-2 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="px-3 mb-5">
+                    <fieldset>
                         <legend class="fieldset-label px-2">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
@@ -120,12 +128,11 @@
                             <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
                         </p>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
-</div>
+
     <!--Loading overlay-->
     <div id="loading-overlay">
         <h1 class="loading-spinner">
