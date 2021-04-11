@@ -33,7 +33,7 @@ The purpose of my site is
 ## Imagery
 
 - I used Pexels to find images related to my site i.e. photos of food
-- I have edited the photos....
+- I have edited the photos.....
 
 ## Wireframes
 
