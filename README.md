@@ -229,6 +229,61 @@ In order to deploy the site, Github, AWS and Heroku were used.
 ## AWS
 ---
 
+AWS is used to host the static files needed for our project.
+
+1. Visit AWS website and log in or register as a new user if you've no account
+2. Create a new bucket by:
+  * Name your AWS - in this case 'nandi-store'
+  * Select region closest to you - based in UK this was (EU(London) EU-west-2)
+  * Uncheck access box to allow access for public - anyone will be able to access the bucket
+  * Click 'Create Bucket'
+  * Navigate to 'Properties' and enable Static Website Hosting
+  * Navigate to 'Permissions' CORS and add the below into the input field:
+  > [
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+3. Navigate to 'Bucket Policy' and select Policy Generator to create a security policy - select 'S3 Bucket Policy' Add * to Principle which will alow all principals
+  * Navigate to 'Action' and copy the ARN, paste this into the Edit Bucket Policy field and add /* to so all resources can be accessed in the bucket
+    > "nandi-store/*"
+  * Navigate to 'Access Control List' - under Everyone(Public Access) select List then save changes
+4. To create a user we will need to begin by creating a group by:
+  * Navigate to the service IAM(Identity and Access Management) 
+  * Create a new group - in this case 'manage-nandi-store'
+  * Click next step again, a second time, we don'y have a policy to attach to the group as of yet
+  * Navigate to 'Policies' and click Create Policy
+  * Under JSON tab select 'Import Managed Policy' From here we can import a policy - AWS offers policies, so we can use their 'AmazonS3FullPolicy' - import this
+  * Back in S3, under our bucket copy your ARN
+  * In IAM update Resource item and copy your ARN using the following pattern:
+    > "arn:aws:s3:::magnetic-eyes"
+      "arn:aws:s3:::magnetic-eyes/*"
+  * Review Policy
+  * Choose a name and descripton for the policy and click Create Policy
+  * Navigate to Groups, select your Group and navigate to Permissons then Attach Policy 
+  * Find your newly created policy and attach it to the Group
+5. We will need to create a user to add to the Group - Navigate to Users under the IAM service tab and select 'Add User'
+  * Allow Programmatic Acces and click Next
+  * Add new user to group
+  * Click through next until you are given the option to click Create User
+  * Download the CSV which will contain the user credentials - ensure this is kept safe as it cannot be downloaded again
+6. Next, we will need to connect our AWS bucket to Django, begin by installing boto3 & django-storages using the IDE terminal:
+  > pip3 install boto3
+  > pip3 install django-storages
+  * Freeze requirements using:
+  > pip3 freeze > requirements.txt
+
+
+
 # Credit
 
 - [Django Allauth Docs](https://django-allauth.readthedocs.io/en/latest/installation.html)
