@@ -62,7 +62,7 @@
                             <a class="nav-link " aria-current="page" href="{% url 'profile' %}">My Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'view_bag' %}">Shopping Cart | {% if grand_total %}
+                            <a class="nav-link" href="{% url 'view_bag' %}">Bag | {% if grand_total %}
                                 £{{ grand_total|floatformat:2 }}
                                 {% else %}
                                 £0.00
@@ -77,7 +77,7 @@
                         
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
                         {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Register</a></li>
                     </ul>
                     {% endif %}
