@@ -17,22 +17,22 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr>
+
             <h2 class="mb-4">Thank you!</h2>
             <p>Please see confirmation of your order below - a confirmation email will be sent to <i>{{ order.email }}</i> shortly.  </p>
-            <hr>
+
         </div>
     </div>
     <!--Order summary-->
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
-            <a href="{% url 'profile' %}">My Profile</a>
+            <a class="btn btn-dark rounded-0" href="{% url 'profile' %}">My Profile</a>
         </div>
     </div>
     <!--Back to shopping-->
     <div class="row">
-        <div class="col-12 col-lg-7 text-right">
-            <a href="{% url 'products' %}">Shop now!</a>
+        <div class="col-12 col-lg-7 text-right btn btn-dark rounded-0">
+            <a class="btn btn-dark rounded-0" href="{% url 'products' %}">Shop now!</a>
         </div>
     </div>
         </div>
