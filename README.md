@@ -1,18 +1,18 @@
-*Due to time constraints and not being able to obtain an extension, unfortuntely the site does remaing unfinished at present*
+# *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present*
 
 # Nandi Store
 
-For this project, I have used HTML, CSS, Python(using Flask framework). The small amount of JavaScript has been handled by Bootstrap using a Jquery CDN.
+For this project, I have used HTML, CSS, Django, JQuery.
 
-[Link to my deployed site on Heroku]()
+[Link to my deployed site on Heroku](https://nandi-store.herokuapp.com/)
 
-![Screenshot of site's Index page]()
+![Screenshot of site's Index page](https://nandi-store.s3.eu-west-2.amazonaws.com/media/store_index.JPG)
 
 ---
 
 # User Experience (UX)
 
-The purpose of my site is
+
 
 ## User Stories
 
@@ -164,14 +164,17 @@ I have completed testing alongside visitor goals
 
 # Bugs/Known Issues
 
-*Due to time constraints and not being able to obtain an extension, unfortuntely the site does remaing unfinished at present*
-max items on product info but not on bag - resolved?
+## * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present, a resubmission will be needed* *
+
+- I have not been able to add the required additional apps due to not having sufficient time to add these
 - Toasts when carrying actions are not visible though take up space on the screen
+- Order details show as '0.00' despite items having different costs
 
 # Resolved Issues
 
 - I encountered a bug early on where clicking the link to the index page did not work could not find template, I discovered this was because I was using 'index' instead 'home' in my href url
 - Footer was appearing at different places on each page(depending on amount of content on a page) - I resorted to using the 'fixed-bottom' Bootstrap class to resolve this so the footer remains at the bottom of the VH
+- Delivery threshold was no displaying on base.html - I realised this was because 'FREE_DELIVERY_THRESHOLD' was written in caps, once I changed this to lowercase this resolved the issue
 
 ---
 
