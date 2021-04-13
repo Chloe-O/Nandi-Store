@@ -157,50 +157,67 @@ I have completed testing in line with user and owner goals
 ## First Time Visitor Goals
 
 ### First Time Visitor Goals
-__1. Upon first visiting the site, I want to understand what the site is for__
+1. Upon first visiting the site, I want to understand what the site is for
   - Users can quickly navigate to the store using the navigation bar and find the site sells houseplants
-__2. Easily navigate through the site__
+2. Easily navigate through the site
  - The user can navigate through the site using the navigate bar, search bar or buttons throughout the site
-__3. Quickly create a user account if I think I will use the site again for future purchases__
+3. Quickly create a user account if I think I will use the site again for future purchases
   - Navigation bar features the option to log in or register
-__4. Easily make purchases with or without being a registered user__
+4. Easily make purchases with or without being a registered user
   - Users who do not wish to create an account can still navigate through the site and make purchases but do not have access to a profile page. If the a guest user tries to navigate to the profile page, they will be prompted to log in
-__5. Clearly find products for sale and find more information about these before adding to my basket__
+5. Clearly find products for sale and find more information about these before adding to my basket
  - On the products page, users can click on items for more information about a particular product
-__6. Search for a particular product or only view products of a particular category__
+6. Search for a particular product or only view products of a particular category
  - Users can user the search bar to search for a particular keyword(s)
  - On the products pages, a user can filter products by category using the dropdown
-__7. Sort products by category, price and ratings__
+7. Sort products by category, price and ratings
  - Users can sort products by category, price or rating using the dropdown on the products page
 
 ### Registered User Goals
-1. __Easily log in and out of my account__
-  Using the navigation bar, a user can easily log in or out of their account
-__2. Reset my password if I forget it__
+1. Easily log in and out of my account
+  - Using the navigation bar, a user can easily log in or out of their account
+2. Reset my password if I forget it
   - If a user forgets their password, they can choose the 'forgot my password' link and they will be sent an email with a link to reset their password
-__3. Save my preferred delivery information on my profile for quicker, more convenient checkout__
+3. Save my preferred delivery information on my profile for quicker, more convenient checkout
   - On the profile page, a registered user can input their address and save this. When purchasing, this information will be pre-filled on the checkout page
-__4. View details of my past orders__
+4. View details of my past orders
   - When navigating to the profile page, any past orders will be displayed. A user can click on each order to get more information about it such as items order, order date/time & billing address
-__5. Receive a verification email when creating my account for extra security__
-  -
-__6. Receive confirmation that my order has been successful after checkout__
-__7. Be confident that the payment method used is secure__
-__8. Sort products by category, price and ratings__
-__9. Search for a particular product or only view products of a particular category__
+5. Receive a verification email when creating my account for extra security
+  - The user will receive a verification email upon registering an account, they will need to follow the link in the email to verify their account
+6. Receive confirmation that my order has been successful after checkout
+  - The user should receive an email following a successful order confirming this success *this feature currently does not work and user receives no email* 
+7. Be confident that the payment method used is secure
+   - Stripe is used to handle payments, this is a secure payment service
+8. Sort products by category, price and ratings
+ - Users can sort products by category, price or rating using the dropdown on the products page
+9. Search for a particular product or only view products of a particular category
+ - Users can user the search bar to search for a particular keyword(s)
+ - On the products pages, a user can filter products by category using the dropdown
 
 ### Guest User Goals
-__1. Easily checkout without need to create an account__
-__2. Make a purchase by inputting my delivery information at the checkout__
-__3. Receive confirmation that my order has been successful after checkout__
-__4. Be confident that the payment method used is secure__
-__5. Sort products by category, price and ratings__
+1. Easily checkout without need to create an account
+  - User does not need an account to make a purchase and can make an order as a guest
+2. Make a purchase by inputting my delivery information at the checkout
+ - When reaching checkout, the user will have to input relevant contact and delivery information to make the order
+3. Receive confirmation that my order has been successful after checkout
+  - The user should receive an email following a successful order confirming this success *this feature currently does not work and user receives no email* 
+4. Be confident that the payment method used is secure
+   - Stripe is used to handle payments, this is a secure payment service
+5. Sort products by category, price and ratings
+ - Users can sort products by category, price or rating using the dropdown on the products page
 
 ### Admin/Owner Goals
-__1. Feel confident a user can easily navigate the site to make purchases__
-__2. Easily add, edit or delete items to/from the store__
-__4. Allow users who do not wish to create an account to also make purchases through the site__
-__5. Make users aware and remind them that they can qualify for free shipping if they spend £25.00+ - this encourages users to spend more to take advantage of free shipping offer__
+1. Feel confident a user can easily navigate the site to make purchases
+  - Navigation bar makes it easy to get around the site as is clear and present on each page
+2. Easily add, edit or delete items to/from the store
+  - Using the manage products link, admin/owner can add new products including their names, description, price, rating and image
+  - On the products page, the admin/owner can opt to edit an existing item or delete it all together
+4. Allow users who do not wish to create an account to also make purchases through the site
+ - Users are not obligated to create an account to make a purchase so admin/owner can be confident if any user wishes to make a purchase, they can
+5. Make users aware and remind them that they can qualify for free shipping if they spend £25.00+ - this encourages users to spend more to take advantage of free shipping offer
+- The banner runs along the underside of the navigation bar reminding users that order over £25.00 qualify for free shipping
+- When viewing their bag, the user is told how much extra they would need to spend to get free shipping if their order does not exceed £25.00(or told shipping is £0.00 if order is equal to or exceeds £25.00)
+ - This encourages users to 'top up' their order and spend more if it falls below the threshold
 
 ---
 
@@ -209,9 +226,10 @@ __5. Make users aware and remind them that they can qualify for free shipping if
 ### * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present, a resubmission will be needed* *
 
 - I have not been able to add the required additional apps due to not having sufficient time to add these
-- Toasts when carrying actions are not visible though take up space on the screen
+- Toasts when carrying actions are not visible on the page
 - Order summaries show as '0.00' despite items having different costs but when paying order sum is correct(also shows correct on Stripe)
 - Footer on Profile page does not span the entire width of the viewport
+- Spinner color when payment is processing is not opaque 
 
 # Resolved Issues
 
