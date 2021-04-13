@@ -1,4 +1,4 @@
-# *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present*
+### *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present*
 
 # Nandi Store
 
@@ -164,7 +164,7 @@ I have completed testing alongside visitor goals
 
 # Bugs/Known Issues
 
-## * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present, a resubmission will be needed* *
+### * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present, a resubmission will be needed* *
 
 - I have not been able to add the required additional apps due to not having sufficient time to add these
 - Toasts when carrying actions are not visible though take up space on the screen
