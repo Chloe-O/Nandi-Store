@@ -1,3 +1,5 @@
+*Due to time constraints and not being able to obtain an extension, unfortuntely the site does remaing unfinished at present*
+
 # Nandi Store
 
 For this project, I have used HTML, CSS, Python(using Flask framework). The small amount of JavaScript has been handled by Bootstrap using a Jquery CDN.
@@ -162,11 +164,14 @@ I have completed testing alongside visitor goals
 
 # Bugs/Known Issues
 
+*Due to time constraints and not being able to obtain an extension, unfortuntely the site does remaing unfinished at present*
 max items on product info but not on bag - resolved?
+- Toasts when carrying actions are not visible though take up space on the screen
 
 # Resolved Issues
 
-- I encountered a bug early on where clicking the link to the index page did not work and threw a 'xxxxx' error, I discovered this was because I was using 'index' instead 'home' in my href url
+- I encountered a bug early on where clicking the link to the index page did not work could not find template, I discovered this was because I was using 'index' instead 'home' in my href url
+- Footer was appearing at different places on each page(depending on amount of content on a page) - I resorted to using the 'fixed-bottom' Bootstrap class to resolve this so the footer remains at the bottom of the VH
 
 ---
 
