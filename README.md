@@ -52,11 +52,12 @@ For this project I have created an E-commerce store which focuses on selling hou
 ## Design
 
 - Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages i.e. Header is rendered the same on all pages as the same code is injected on all pages
-- 
+- The site has a simple design to allow a user to easily understand how to navigate through the site and made purchases
 
 ## Colour Scheme
 
 - The colour scheme is white, black, yellow and green
+- Where Bootstrap's colour classes have been used e.g. warning yellow for the banner underneath the nav bar or on the bag page to tell a user they only need to spend so much to qualify for free shipping catches the attention of the user but is not used so much to draw away from the rest of the site
 
 ## Typography
 
@@ -117,9 +118,6 @@ For this project I have created an E-commerce store which focuses on selling hou
 - Built in security features e.g. a user cannot create an account using a password that is similar to their username or password
 
 # Features
-
-- Design and colour scheme is simple and easy to navigate
-- 
 
 __Index__
 1. Users can easily navigate to other pages on the site using the navigation bar, user can also go straight to products by clicking 'SHOP NOW'
@@ -400,6 +398,40 @@ AWS is used to host the static files needed for our project.
   > pip3 install django-storages
   * Freeze requirements using:
   > pip3 freeze > requirements.txt
+7. Add 'storages' to installed apps on settings.py
+  * Add the following to settings.py which allows communication between our project/Heroku and AWS:
+ ![AWS Bucket Config](https://nandi-store.s3.eu-west-2.amazonaws.com/media/aws_bucket_config.jpg)
+  * Back in Heroku we need to add the following AWS config vars which will be the credentials found in the csv file from AWS:
+  > AWS_ACCESS_KEY_ID - *input key from csv file*
+  > AWS_SECRET_ACCESS_KEY -  *input key from csv file*
+  > USE_AWS - True
+  * Delete the collectstatic config variable as we no longer require this
+8. In settings.py add:
+  >  AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+9. Create a file called 'customer_storages.py', this will need to contain the following: 
+  > from django.conf import settings
+  > from storages.backends.s3boto3 import S3Boto3Storage
+
+  > class StaticStorage(S3Boto3Storage):
+  > location = settings.STATICFILES_LOCATION
+
+  > class MediaStorage(S3Boto3Storage):
+  > location = settings.MEDIAFILES_LOCATION
+10. As per the code in the screenshot above, our project now knows where to find our AWS static files
+  * The cache control tells the browser to cache static files for a long time which causes minimal disruption for the user
+11. Static files(images, JS & CSS) will need to be downloaded from GitPod if not stored locally then uploaded to your AWS bucket
+
+## Stripe
+
+1. Take the Stripe keys from the config variables in GitPod settings, these are as follows:
+  > STRIPE_PUBLIC_KEY
+  > STRIPE_SECRET_KEY
+  > STRIPE_WH_SECRET *This is obtained from the developer section of the Stripe website
+2. Add these variables to Heroku config vars
+3. Back in the developer section of Stripe website, add a new endpoint, opt to receive all events then add the endpoint
+4. Reveal signing secret, replace STRIPE_WH_SECRET config var with this
+
+
 
 ---
 
