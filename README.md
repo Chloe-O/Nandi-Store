@@ -297,6 +297,7 @@ AWS is used to host the static files needed for our project.
 - [Aloe Vera Image](https://www.pexels.com/@cisiq) Cintia Siqueira @ Pexels
 - [Crassula Image](https://www.pexels.com/@harry-cooke) Harry Cooke @ Pexels
 - [Heart Cactus Image](https://pixabay.com/users/chloelindaphotographe-9286470/) Chloe Linda @ Pixabay
+- [Test plant image](https://www.pexels.com/@huy-phan-316220) Huy Phan @ Pexels
 - [Aloe Vera Info](https://en.wikipedia.org/wiki/Aloe_vera) Wikipedia
 - [Crassula Info](https://en.wikipedia.org/wiki/Crassula) Wikipedia
 - [Heart Cactus Info](https://en.wikipedia.org/wiki/Hoya_kerrii) Wikipedia
