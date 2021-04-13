@@ -5,20 +5,12 @@
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col">
 
-            <h2 class="mb-4">Thank you!</h2>
+            <h2 class="mb-4 mt-4">Thank you!</h2>
             <p>Your order was success, you will receive a confirmation email to <i>{{ order.email }}</i> shortly.  </p>
 
         </div>
@@ -192,12 +184,12 @@
 			<div class="col-12 col-lg-7 text-right">
                 {% if from_profile %}
     <!--View profile-->
-    <a href="{% url 'profile' %}" class="btn btn-dark rounded-0">
+    <a href="{% url 'profile' %}" class="btn btn-dark rounded-0 text-uppercase">
         <span class="font-weight-bold">My Profile</span>
     </a>
                 {% else %}
     <!--Back to shopping-->
-    <a href="{% url 'products' %}" class="btn btn-dark rounded-0">
+    <a href="{% url 'products' %}" class="btn btn-dark rounded-0 text-uppercase">
         <span class="font-weight-bold">Shop now!</span>
     </a>
                 {% endif %}
