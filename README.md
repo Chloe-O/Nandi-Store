@@ -12,8 +12,6 @@ For this project I have created an E-commerce store which focuses on selling hou
 
 # User Experience (UX)
 
-
-
 ## User Stories
 
 ### First Time Visitor Goals
@@ -86,6 +84,8 @@ For this project I have created an E-commerce store which focuses on selling hou
 - [JQuery](https://jquery.com/)
 - [GitHub](https://github.com/)
 - [Stripe](https://stripe.com/gb)
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
 
 
 ## Libraries & Programs Used
@@ -104,6 +104,10 @@ For this project I have created an E-commerce store which focuses on selling hou
    - AWS used for hosting static files e.g. images, css
 7. [GitPod](https://www.gitpod.io/)
   - IDE
+8. [PostgresSQL](https://www.postgresql.org/)
+  - Database functionality provided by Heroku
+9. [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+
 
 ---
 
@@ -114,11 +118,38 @@ For this project I have created an E-commerce store which focuses on selling hou
 
 # Features
 
-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- Design and colour scheme is simple and easy to navigate
+- 
 
-# Data Structure
+__Index__
+1. Users can easily navigate to other pages on the site using the navigation bar, user can also go straight to products by clicking 'SHOP NOW'
 
-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+__Products__
+1. Products are clearly displayed using Bootstrap cards, this includes an image of the item, name, rating and price
+2. Users can sort items by category, price, rating
+
+__Product details__
+1. Shows larger image of item and provides description of item
+2. Buttons allow user to add item to bag or go back to all products
+
+__Profile__
+1. Users with a registered account can view any previous orders and their default delivery/billing info from the profile page
+
+__Bag__
+1. User can view items in their bag or will be told their bag is empty
+2. User will be able to view items with quantity, price per unit and sub-total
+3. Total cost is displayed with cost of delivery(if applicable)
+4. User can navigate to the checkout from here to complete purchase
+
+__Checkout__
+1. User is shown total cost to pay and items they are purchasing
+2. Users with account who have provided delivery/billing info will have the form populated. Otherwise, the user will have to manually input this
+3. User is made aware whether purchase has been successful or not
+4. User can proceed without filling out all the required fields
+
+__Admin/Owner__
+1. Admin can add new items
+2. By navigating to the products page, admin can edit or delete existing products
 
 ---
 
@@ -126,35 +157,49 @@ For this project I have created an E-commerce store which focuses on selling hou
 
 ## Code Validation
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no errors in the project and the Python code is PEP8 compliant.
+The W3C Markup Validator and W3C CSS Validator Services were used to validate the project as well as pep8online.com. Some errors are present, particularly with Python code, though these cannot be rectified or would break the code.
 
 ### HTML
 
 - I validated the HTML using the deployed site's URL
+- This did thrown an error regarding information held in the meta tags in my base template, I have ignored these as this is consistent with the material in the Boutique ado tutorial
 
-![HTML]()
+![HTML](https://nandi-store.s3.eu-west-2.amazonaws.com/media/html_validation.png)
 
 ---
 
 ### CSS
 
-![CSS]()
+#### Base CSS
+![CSS](https://nandi-store.s3.eu-west-2.amazonaws.com/media/base_css_validation.jpg)
+
+#### Checkout CSS
+![CSS](https://nandi-store.s3.eu-west-2.amazonaws.com/media/checkout_css_validation.jpg)
+---
+
+## Python
+
+For 'line too long' errors, I opted not to change these as found breaking up the string caused the code to break - as they are, they do not cause any issues with the running of the code. I did not include the screenshots of these validations due to the amount of python files that needed to be check, I have noted any errors experienced below:
+
+- views.py in bag app throws a 'line too long' error - however I cannot change this as the string of text becomes broken if I try to split it over more than 2 lines
+- models.py in checkout app gives an 'continuation line under-indented for visual indent', this cannot be changed or will break the string
+- models.py in checkout app also gives a 'line too long' error - again, this cannot be changed
+- webhook_handler.py in checkout app throws 2 'line too long' errors
+- webhooks.py in checkout throws a 'line too long' error
+- settings.py in nandi_store app throws 4 'line too long' errors
+- urls.py and widgets.py in product app throws a 'line too long' error
 
 ---
 
 ### JavaScript
 
-## ![Python]()
+I used JSHint.com to validate any Javascript. Unfortunately, JSHint does not recognise Jquery syntax so any Jquery code produced an 'undefined variable' error. 
 
-### JavaScript
-
-![CSS]()
+Other than this, there were no errors in the Javascript.
 
 ## Testing User Stories from User Experience (UX) Section and Testing
 
 I have completed testing in line with user and owner goals
-
-## First Time Visitor Goals
 
 ### First Time Visitor Goals
 1. Upon first visiting the site, I want to understand what the site is for
@@ -223,22 +268,20 @@ I have completed testing in line with user and owner goals
 
 # Bugs/Known Issues
 
-### * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present, a resubmission will be needed* *
+### * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present* *
 
 - I have not been able to add the required additional apps due to not having sufficient time to add these
-- Toasts when carrying actions are not visible on the page
-- Order summaries show as '0.00' despite items having different costs but when paying order sum is correct(also shows correct on Stripe)
-- Footer on Profile page does not span the entire width of the viewport
-- Spinner color when payment is processing is not opaque 
+- Toasts when carrying out actions (i.e. adding items to bag) are not visible on the page
+- Order summaries show as '0.00' despite items having different costs but when paying order sum is correct(also shows correct payment amount on Stripe)
+- Footer on Profile and Checkout Success pages do not span the entire width of the viewport
+- Spinner colour when payment is processing is not opaque despite using RGB colour with opacity
+- Users do not receive a confirmation email when making an order but receive all other email instances i.e. forgot password, verify email etc.
 
 # Resolved Issues
 
 - I encountered a bug early on where clicking the link to the index page did not work could not find template, I discovered this was because I was using 'index' instead 'home' in my href url
 - Delivery threshold was no displaying on base.html - I realised this was because 'FREE_DELIVERY_THRESHOLD' was written in caps, once I changed this to lowercase this resolved the issue
-
----
-
-# Features to input for future...
+- When deploying to Heroku the index image did not display, I provided the url to this image from my AWS bucket which resolved this
 
 ---
 
@@ -255,6 +298,7 @@ In order to deploy the site, Github, AWS and Heroku were used.
 4. Create a Procfile, this will allow Heroku to understand the type of app we are running, the following should be input to the Procfile:
    > web: gunicorn nandi_store.wsgi:application
 
+---
 
 ## Heroku
 
@@ -287,6 +331,8 @@ In order to deploy the site, Github, AWS and Heroku were used.
   > ALLOWED_HOSTS = ['nandi-store.herokuapp.com', 'localhost']
 18. Copy Environment Variables from GitPod into Heroku's Config Vars which can be found in settings
 
+---
+
 ### Deploying in Heroku
 
 1. Using GitPod Heroku needs to be initialised, in the terminal input:
@@ -298,8 +344,9 @@ In order to deploy the site, Github, AWS and Heroku were used.
 5. Finally, tick the option to allow automatic deploys
 6. The app can be launced using the'Open App' button towards the top of the screen
 
-## AWS
 ---
+
+## AWS
 
 AWS is used to host the static files needed for our project.
 
@@ -354,7 +401,7 @@ AWS is used to host the static files needed for our project.
   * Freeze requirements using:
   > pip3 freeze > requirements.txt
 
-
+---
 
 # Credit
 
@@ -363,7 +410,7 @@ AWS is used to host the static files needed for our project.
 - Boutique Ado tutorial
 - [The Little Botanical](https://thelittlebotanical.com) information about different houseplants
 
-# Image Credit
+# Image Credits
 
 - [Header Image](https://www.pexels.com/@cottonbro) Cottonbro @ Pexels
 - [Aloe Vera Image](https://www.pexels.com/@cisiq) Cintia Siqueira @ Pexels
