@@ -1,5 +1,3 @@
-### *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present*
-
 # Nandi Store
 
 For this project I have created an E-commerce store which focuses on selling houseplants, users can visit the site and purchase different houseplants as a registered user or guest. 
@@ -266,14 +264,15 @@ I have completed testing in line with user and owner goals
 
 # Bugs/Known Issues
 
-### * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present* *
+### * *Due to time constraints and not being able to obtain an extension, unfortuntely the site does remain unfinished at present and I have not been able to go outside the scope of the course material* *
 
 - I have not been able to add the required additional apps due to not having sufficient time to add these
 - Toasts when carrying out actions (i.e. adding items to bag) are not visible on the page
-- Order summaries show as '0.00' despite items having different costs but when paying order sum is correct(also shows correct payment amount on Stripe)
+- Order summaries show as '£0.00' despite items having different costs but when paying order sum is correct(also shows correct payment amount on Stripe)
 - Footer on Profile and Checkout Success pages do not span the entire width of the viewport
 - Spinner colour when payment is processing is not opaque despite using RGB colour with opacity
 - Users do not receive a confirmation email when making an order but receive all other email instances i.e. forgot password, verify email etc.
+- Image formatting on products page is not consistent
 
 # Resolved Issues
 
