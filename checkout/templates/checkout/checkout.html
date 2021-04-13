@@ -60,10 +60,10 @@
             </div>
             {% endfor %}
 
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mt-3">
                 <p>Please complete the form below to complete your order</p>
-                <form>
-                    <input action="{% url 'checkout' %}" method="POST" id="payment-form">
+
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
 
                 
