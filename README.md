@@ -298,5 +298,6 @@ AWS is used to host the static files needed for our project.
 - [Crassula Image](https://www.pexels.com/@harry-cooke) Harry Cooke @ Pexels
 - [Heart Cactus Image](https://pixabay.com/users/chloelindaphotographe-9286470/) Chloe Linda @ Pixabay
 - [Aloe Vera Info](https://en.wikipedia.org/wiki/Aloe_vera) Wikipedia
-
+- [Crassula Info](https://en.wikipedia.org/wiki/Crassula) Wikipedia
+- [Heart Cactus Info](https://en.wikipedia.org/wiki/Hoya_kerrii) Wikipedia
 - [Noimage Image](https://github.com/ckz8780/boutique_ado_v1/blob/dependabot/pip/django-3.0.7/media/noimage.png) Code Institute boutique_ado_v1 project
