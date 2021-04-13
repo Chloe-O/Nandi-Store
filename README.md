@@ -2,7 +2,7 @@
 
 # Nandi Store
 
-For this project, I have used HTML, CSS, Django, JQuery.
+For this project I have created an E-commerce store which focuses on selling houseplants, users can visit the site and purchase different houseplants as a registered user or guest. 
 
 [Link to my deployed site on Heroku](https://nandi-store.herokuapp.com/)
 
@@ -16,17 +16,49 @@ For this project, I have used HTML, CSS, Django, JQuery.
 
 ## User Stories
 
-## First Time Visitor Goals
+### First Time Visitor Goals
+1. Upon first visiting the site, I want to understand what the site is for
+2. Easily navigate through the site
+3. Quickly create a user account if I think I will use the site again for future purchases
+4. Easily make purchases with or without being a registered user
+5. Clearly find products for sale and find more information about these before adding to my basket
+6. Search for a particular product or only view products of a particular category
+7. Sort products by category, price and ratings
 
-## Returning Time Visitor Goals & Frequent Time Visitor Goals
+### Registered User Goals
+1. Easily log in and out of my account
+2. Reset my password if I forget it
+3. Save my preferred delivery information on my profile for quicker, more convenient checkout
+4. View details of my past orders
+5. Receive a verification email when creating my account for extra security
+6. Receive confirmation that my order has been successful after checkout
+7. Be confident that the payment method used is secure
+8. Sort products by category, price and ratings
+9. Search for a particular product or only view products of a particular category
+
+### Guest User Goals
+1. Easily checkout without need to create an account
+2. Make a purchase by inputting my delivery information at the checkout
+3. Receive confirmation that my order has been successful after checkout
+4. Be confident that the payment method used is secure
+5. Sort products by category, price and ratings
+
+### Admin/Owner Goals
+1. Feel confident a user can easily navigate the site to make purchases
+2. Easily add, edit or delete items to/from the store
+4. Allow users who do not wish to create an account to also make purchases through the site
+5. Make users aware and remind them that they can qualify for free shipping if they spend £25.00+ - this encourages users to spend more to take advantage of free shipping offer
+
+---
 
 ## Design
 
-- Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages
+- Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages i.e. Header is rendered the same on all pages as the same code is injected on all pages
+- 
 
 ## Colour Scheme
 
-- The colour scheme is
+- The colour scheme is white, black, yellow and green
 
 ## Typography
 
@@ -34,8 +66,8 @@ For this project, I have used HTML, CSS, Django, JQuery.
 
 ## Imagery
 
-- I used Pexels to find images related to my site i.e. photos of food
-- I have edited the photos.....
+- I used Pexels and Pixabay to find images related to my site i.e. plant images and jumbotron index image
+- I have edited some of the photos using Windows Photo editor
 
 ## Wireframes
 
@@ -43,18 +75,20 @@ For this project, I have used HTML, CSS, Django, JQuery.
 
 # Technologies Used
 
-Languages used for this site:
+## Languages, frameworks and services used for this site:
 
 - [JavaScript](https://www.javascript.com/)
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Python](https://www.python.org/)
-- [Bootstrap](https://getbootstrap.com/)
+- [Bootstrap v5](https://getbootstrap.com/)
 - [Django](https://www.djangoproject.com/)
+- [JQuery](https://jquery.com/)
+- [GitHub](https://github.com/)
+- [Stripe](https://stripe.com/gb)
 
 
-
-## Frameworks, Libraries & Programs Used
+## Libraries & Programs Used
 
 1. [Google Fonts:](https://fonts.google.com/)
    - Google fonts were used to import font
@@ -66,18 +100,25 @@ Languages used for this site:
    - Balsamiq was used to create the wireframes for the site
 5. [Heroku:](https://www.heroku.com/)
    - Heroku was used to deploy the site
-6. [AWS](https://aws.amazon.com/)
-   - AWS used for......
+6. [Amazon Web Services - AWS](https://aws.amazon.com/)
+   - AWS used for hosting static files e.g. images, css
+7. [GitPod](https://www.gitpod.io/)
+  - IDE
 
 ---
 
+# Authentication
+
+- Authentication is provided by Django's Allauth, this provides templates for user actions such as login/register/email verifications etc.
+- Built in security features e.g. a user cannot create an account using a password that is similar to their username or password
+
 # Features
 
-- A user can
+- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Data Structure
 
--
+- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
@@ -111,54 +152,55 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ## Testing User Stories from User Experience (UX) Section and Testing
 
-I have completed testing alongside visitor goals
+I have completed testing in line with user and owner goals
 
 ## First Time Visitor Goals
 
-- I want to understand the purpose of the site within a short time of visiting the site by the images and description on the landing page
-  - The site is quite minimal and clearly laid out, it is easy for a user to user the purpose of and navigate through the site
-  1.  When navigating through the site, using the navigation bar or collapsable menu(on smaller display), there are no broken links or misdirects
-- I want to easily create an account to make full use of the site
-  - A user can click on the 'login/register' page in the navigation bar to log in or register to the site
-  1.  A user can log in or register an account using a minimum length of 5 characters for their username and password
-- I want to add, edit and delete my own recipes
-  - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
-  1.  Once a user is logged in or creates an account, they will automatically be redirected to their own profile page
-  2.  If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to select edit or delete
-- I want to view recipes submitted by other users
-  - Users can navigate to the recipes page to view all submitted recipes including their own
-  1.  The all recipes page displays all submitted recipes in a Bootstrap accordian
-  2.  Users not logged in can manually access the recipes page, can view recipes but cannot make any changes
-- I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
-  - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
-    1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
+### First Time Visitor Goals
+1. Upon first visiting the site, I want to understand what the site is for
+  - Users can quickly navigate to the store using the navigation bar and find the site sells houseplants
+2. Easily navigate through the site
+ - The user can navigate through the site using the navigate bar, search bar or buttons throughout the site
+3. Quickly create a user account if I think I will use the site again for future purchases
+  - Navigation bar features the option to log in or register
+4. Easily make purchases with or without being a registered user
+  - Users who do not wish to create an account can still navigate through the site and make purchases but do not have access to a profile page. If the a guest user tries to navigate to the profile page, they will be prompted to log in
+5. Clearly find products for sale and find more information about these before adding to my basket
+ - On the products page, users can click on items for more information about a particular product
+6. Search for a particular product or only view products of a particular category
+ - Users can user the search bar to search for a particular keyword(s)
+ - On the products pages, a user can filter products by category using the dropdown
+7. Sort products by category, price and ratings
+ - Users can sort products by category, price or rating using the dropdown on the products page
 
-## Returning Time Visitor Goals & Frequent Time Visitor Goals
+### Registered User Goals
+1. Easily log in and out of my account
+  Using the navigation bar, a user can easily log in or out of their account
+2. Reset my password if I forget it
+  - If a user forgets their password, they can choose the 'forgot my password' link and they will be sent an email with a link to reset their password
+3. Save my preferred delivery information on my profile for quicker, more convenient checkout
+  - On the profile page, a registered user can input their address and save this. When purchasing, this information will be pre-filled on the checkout page
+4. View details of my past orders
+  - When navigating to the profile page, any past orders will be displayed. A user can click on each order to get more information about it such as items order, order date/time & billing address
+5. Receive a verification email when creating my account for extra security
+  -
+6. Receive confirmation that my order has been successful after checkout
+7. Be confident that the payment method used is secure
+8. Sort products by category, price and ratings
+9. Search for a particular product or only view products of a particular category
 
-- I want to return to the site and log in
-  - Users can easily navigate to the log in page and log in to view recipes
-    1. Log in page is easy to find from the index page, user is redirected to profile page upon successful log in
-- I want a place to keep a record of my own recipes
-  - Once a user creates an account, they can create recipes - these will be submitted to the database where all users can view them but also a user can view them on their own profile page
-    1. User can submit/edit recipes, these display on recipe page and profile page
-- I want to be able to view my recipes on my own profile page, separate to other user's recipes
-  - The user's profile will continue to show recipes only they have submitted
-    1. Once submitted, user's recipes will be commited to the database and remain there and display on all recipes and profile pages
-- I want to easily add, edit and delete my own recipes
-  - From the recipes or profile, a user can easily edit or delete a recipe by opening up the relevant accordian item and clicking edit or delete
-    1. Recipes can be deleted using the buttons under the recipes's title in the accordian section
-- I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
-  - Again, users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
-    1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
-  - I want to log out when I am finished using the site and clear session data
-    1. When logged in, the navigation bar shows a log out option(only viewable by logged in users), clicking this logs the user out and redirects them to the log in page
+### Guest User Goals
+1. Easily checkout without need to create an account
+2. Make a purchase by inputting my delivery information at the checkout
+3. Receive confirmation that my order has been successful after checkout
+4. Be confident that the payment method used is secure
+5. Sort products by category, price and ratings
 
-## Further Testing
-
-- I have used Chrome Developer Tools to understand how the live Heroku app looks on different devices, I've also tested the app on my own Samsung S20+ device
-- I have viewed the app in different browsers such as Google Chrome, Samsung Internet, Microsoft Edge and Mozilla Firefox - I noticed the site loads slightly slower on Firefox compared to other browers
-- I have tested the site by creating accounts, submitting, editing and deleting recipes to ensure there were no error when carrying out these actions
-- I have tested the links on the site to ensure no broken links, social media links in the foot redirect in new tabs so do not lead any from the site
+### Admin/Owner Goals
+1. Feel confident a user can easily navigate the site to make purchases
+2. Easily add, edit or delete items to/from the store
+4. Allow users who do not wish to create an account to also make purchases through the site
+5. Make users aware and remind them that they can qualify for free shipping if they spend £25.00+ - this encourages users to spend more to take advantage of free shipping offer
 
 ---
 
@@ -168,13 +210,17 @@ I have completed testing alongside visitor goals
 
 - I have not been able to add the required additional apps due to not having sufficient time to add these
 - Toasts when carrying actions are not visible though take up space on the screen
-- Order details show as '0.00' despite items having different costs
+- Order summaries show as '0.00' despite items having different costs but when paying order sum is correct(also shows correct on Stripe)
+- Footer on Profile page does not span the entire width of the viewport
 
 # Resolved Issues
 
 - I encountered a bug early on where clicking the link to the index page did not work could not find template, I discovered this was because I was using 'index' instead 'home' in my href url
-- Footer was appearing at different places on each page(depending on amount of content on a page) - I resorted to using the 'fixed-bottom' Bootstrap class to resolve this so the footer remains at the bottom of the VH
 - Delivery threshold was no displaying on base.html - I realised this was because 'FREE_DELIVERY_THRESHOLD' was written in caps, once I changed this to lowercase this resolved the issue
+
+---
+
+# Features to input for future...
 
 ---
 
