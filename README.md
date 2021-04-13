@@ -70,7 +70,7 @@ For this project I have created an E-commerce store which focuses on selling hou
 
 ## Wireframes
 
-- [Link to wireframes]()
+- [Link to wireframes](https://nandi-store.s3.eu-west-2.amazonaws.com/media/ms4_wireframes.pdf)
 
 # Technologies Used
 
