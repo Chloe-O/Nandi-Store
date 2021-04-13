@@ -23,17 +23,12 @@
 
         </div>
     </div>
-    <!--Order summary-->
-    <div class="row">
-        <div class="col-12 col-lg-7">
-            <a class="btn btn-dark rounded-0" href="{% url 'profile' %}">My Profile</a>
-        </div>
-    </div>
+    <!--View profile-->
+    <a href="{% url 'profile' %}" class="btn btn-dark rounded-0">
+        <span class="font-weight-bold">My Profile</span>
+    </a>
     <!--Back to shopping-->
-    <div class="row">
-        <div class="col-12 col-lg-7 btn btn-dark rounded-0">
-            <a class="btn btn-dark rounded-0" href="{% url 'products' %}">Shop now!</a>
-        </div>
-    </div>
-        </div>
+    <a href="{% url 'products' %}" class="btn btn-dark rounded-0">
+        <span class="font-weight-bold">Shop now!</span>
+    </a>
     {% endblock %}
